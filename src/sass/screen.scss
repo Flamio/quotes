@@ -56,12 +56,29 @@
    }
 }
 
-.cherchill
+.photo
 {
     width:128px;
     height:128px;
     border-radius: 100px;
+}
+
+.cherchill
+{
+    @extend .photo;
     @include photos-sprite('cherchill');
+}
+
+.einstein
+{
+    @extend .photo;
+    @include photos-sprite('einstein');
+}
+
+.twan
+{
+    @extend .photo;
+    @include photos-sprite('twan');
 }
 
 .mainConteiner
@@ -118,10 +135,5 @@ html, body {
     color:white;
     font-size: 15pt;
     max-width: 700px;
+    text-align: center;
 }
-
-/*a {
-    font-family: 'Arial N';
-    padding-left: 30px;
-    @include icons-sprite('right-arrow');
-}*/
