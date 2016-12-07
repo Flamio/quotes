@@ -1,0 +1,127 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/utilities/sprites";
+
+@import "icons/*.png";
+@include all-icons-sprites;
+
+@import "photos/*.png";
+@include all-photos-sprites;
+
+@font-face
+{
+    font-family: 'Arial N';
+    src: url('../fonts/arial-narrow.ttf');
+}
+
+.arrow
+{
+    position: absolute;
+    width:32px;
+    height:32px;
+    cursor: pointer;
+}
+
+.arrow-hovered
+{
+   width:64px;
+    height:64px; 
+}
+
+.back
+{
+    left:5%;
+    @extend .arrow;
+   @include icons-sprite('back'); 
+   &:hover {
+       left:3%;
+       @extend .arrow-hovered;
+       @include icons-sprite('back-hovered');
+   }
+}
+
+.next
+{
+    right:5%;
+    @extend .arrow;
+   @include icons-sprite('next'); 
+   &:hover {
+       right:3%;
+       @extend .arrow-hovered;
+       @include icons-sprite('next-hovered');
+   }
+}
+
+.cherchill
+{
+    width:128px;
+    height:128px;
+    border-radius: 100px;
+    @include photos-sprite('cherchill');
+}
+
+.mainConteiner
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Arial N';
+}
+
+html, body {
+  height: 100%;
+}
+
+#root
+{
+    height: 100%;
+    background-color: black;
+}
+
+.Panel
+{
+    flex-basis:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.HightPanel
+{
+    background-color: #62D995;
+    @extend .Panel;
+}
+
+.DownPanel
+{
+    background-color: #67B2E4;
+    @extend .Panel;
+}
+
+.source
+{
+    position:absolute;
+    font-weight: bold;
+    top:5px;
+    color:#27AE60
+}
+
+.qoute
+{
+    color:white;
+    font-size: 15pt;
+    max-width: 700px;
+}
+
+/*a {
+    font-family: 'Arial N';
+    padding-left: 30px;
+    @include icons-sprite('right-arrow');
+}*/
